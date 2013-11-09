@@ -1,6 +1,4 @@
-/*------------------------------------------------------------------
-Bootstrap Admin Template by EGrappler.com
-------------------------------------------------------------------*/
+
 
 
 
@@ -9,7 +7,8 @@ Bootstrap Admin Template by EGrappler.com
 */
 
 .shortcuts {
-	text-align: center;	
+	text-align: center;
+
 }
 
 .shortcuts .shortcut { 
@@ -17,13 +16,15 @@ Bootstrap Admin Template by EGrappler.com
 	display: inline-block;
 	padding: 12px 0;
 	margin: 0 .9% 1em;
-	vertical-align: top;	
+	vertical-align: center;	
 	
 	text-decoration: none;
 	
 	background: #f9f6f1;
 	
 	border-radius: 5px;
+
+
 }
 
 .shortcuts .shortcut .shortcut-icon {
@@ -43,7 +44,7 @@ Bootstrap Admin Template by EGrappler.com
 }
 
 .shortcuts .shortcut:hover .shortcut-icon {
-	color: #fff;
+	color: #fff;s
 }
 
 .shortcuts .shortcut-label {
@@ -51,6 +52,8 @@ Bootstrap Admin Template by EGrappler.com
 	
 	font-weight: 400;
 	color: #545454;
+
+
 }
 
 
@@ -177,12 +180,18 @@ Bootstrap Admin Template by EGrappler.com
 	padding: 4px 5px 5px;
 	
 	font-size: 10px;
+	border: 1px solid black;
+        border-collapse:collapse;
+        width: 100%;
 }
 
 .action-table .td-actions { 
 	width: 80px; 
 	
 	text-align: center; 
+	border: 1px solid black;
+        border-collapse:collapse;
+        width: 100%;
 }
 
 	.action-table .td-actions .btn { 
@@ -322,5 +331,8 @@ margin-bottom: 26px;}
 	
 	.shortcuts .shortcut {
 		width: 48%;
+		border: 1px solid black;
+        border-collapse:collapse;
+        width: 100%;
 	}
 }

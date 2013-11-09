@@ -28,10 +28,18 @@
       <a class="brand" href="/">{{title}}</a>
       
       <!-- DROPDOWN -->
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+      <!-- ALEXS CHANGES -->
+      <div class="nav-collapse"> <ul class="nav pull-right">
+      
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="icon-user">
+      </i> administrator {{logged_user}}
+      <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href={{logout_url}}>Log out</a></li>
         </ul> 
+
+      </ul></div>
       </div>
       <!--/.nav-collapse --> 
     </div>
@@ -78,10 +86,25 @@
                 <i class="shortcut-icon icon-reorder"></i>
                 <span class="shortcut-label">Reports</span>
               </a>
-              <a href="javascript:;" class="shortcut">
-                <i class="shortcut-icon icon-glass"></i>
-                <span class="shortcut-label">Create</span>
+              <!-- FIRST -->
+            
+                  <a href="javascript:;" class="shortcut">
+                    <i class="shortcut-icon icon-th-large"></i>
+                    <span class="shortcut-label">Jorge</span>
+                  </a>
               </a>
+              <!-- SECOND -->
+                  <a href="/admin/events" class="shortcut">
+                <i class="shortcut-icon icon-calendar"></i>
+                <span class="shortcut-label">Events</span>
+              </a>
+
+                <a href="/admin/members" class="shortcut">
+                  <i class="shortcut-icon icon-user"></i>
+                  <span class="shortcut-label">Members</span>
+                </a>
+                
+            
               <!-- /shortcuts --> 
             </div>
             <!-- /widget-content --> 

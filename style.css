@@ -91,14 +91,8 @@ textarea {
 .navbar .nav>li>a { color:#fff !important;}
 .navbar .brand {
 	font-weight: 600;
-	font-size: 25px;
 	position: relative;
-	top: 10px;
-	color:#fff;
-}
-.navbar .admin-text{
-	font-weight: 600;
-	color:#fff;
+	top: 2px;
 }
 
 .navbar .search-query {
