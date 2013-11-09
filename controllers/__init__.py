@@ -1,1 +1,1 @@
-__all__ = ["home","registration","base_handler"] 
+__all__ = ["home","registration","base_handler","admin","events", "members"] 
