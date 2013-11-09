@@ -1,4 +1,4 @@
-import base_handler
+from controllers import base_handler
 from google.appengine.api import users
 
 class AdminHandler(base_handler.BaseHandler):

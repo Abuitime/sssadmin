@@ -1,4 +1,4 @@
-from controllers import base_handler
+from controllers import base
 from models import user
 
 import re
@@ -26,7 +26,7 @@ def valid_number(number):
         return False
     return True
 
-class RegistrationHandler(base_handler.BaseHandler):
+class RegistrationHandler(base.BaseHandler):
     def get(self):
         if self.request.get('pid'):
             self.render("signup.html", pid = self.request.get('pid'))

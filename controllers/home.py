@@ -1,4 +1,4 @@
-import base_handler
+from controllers import base
 from models import user
 
 def valid_pid(pid):
@@ -6,7 +6,7 @@ def valid_pid(pid):
         return False
     return True 
 
-class HomeHandler(base_handler.BaseHandler):
+class HomeHandler(base.BaseHandler):
 	def get(self):
 		if self.request.get('user'):
 			user = self.request.get('user')
@@ -15,7 +15,7 @@ class HomeHandler(base_handler.BaseHandler):
 		else:
 			#self.response.write("hello world")
 			self.render("index.html", message = "")
-			#self.response.write(base_handler.template_dir)
+			#self.response.write(base.template_dir)
 
 	def post(self):
 		pid = self.request.get('pid')

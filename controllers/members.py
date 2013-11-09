@@ -1,7 +1,7 @@
-import base_handler
+from controllers import base
 from models import user
 
-class MembersHandler(base_handler.BaseHandler):
+class MembersHandler(base.BaseHandler):
     def get(self):
         users = user.User.all()
         u_list = ""

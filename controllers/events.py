@@ -1,7 +1,7 @@
-import base_handler
+from controllers import base
 from models import event
 
-class EventsHandler(base_handler.BaseHandler):
+class EventsHandler(base.BaseHandler):
     def get(self):
         events = event.Event.all().order('-date')
         e_list = ""
