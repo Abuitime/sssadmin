@@ -19,6 +19,10 @@ handlers:
 - url: /.*
   script: main.app
 
+- url: /admin/dash
+  script: dash.py
+  login: required
+
 libraries:
 - name: jinja2
   version: latest
