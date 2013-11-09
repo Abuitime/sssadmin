@@ -1,0 +1,9 @@
+################################################################################
+##                               STATIC                                       ##
+################################################################################
+
+THIS FOLDER SHOULD CONTAIN ALL THE NON-LIBRARY COMPONENTS YOU WILL BE USING FOR
+FRONTEND
+
+1) CREATE A FOLDER WITH THE NAME OF TEH TYPE OF FILES (e,i. js, css, images)
+2) ADD ALL FILES OF SUCH FILES TO THAT FOLDER

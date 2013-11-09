@@ -1,0 +1,11 @@
+################################################################################
+##                               CONTROLLERS                                  ##
+################################################################################
+
+THIS FOLDER SHOULD CONTAIN ALL THE CONTROLLER CLASSES YOU WILL BE USING FOR
+BACKEND
+
+1) CREATE .PY FILE WITH THE NAME OF CONTROLLER (e,i. home.py registration.py)
+2) OPEN THE "__init__.py" FILE AND ADD THE NAME OF YOUR MODULE TO THE "__all__"
+   ARRAY VARAIBLE 
+   

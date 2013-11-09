@@ -1,0 +1,9 @@
+################################################################################
+##                               MODELS                                       ##
+################################################################################
+
+THIS FOLDER SHOULD CONTAIN ALL THE MODEL CLASSES YOU WILL BE USING FOR
+BACKEND
+
+1) CREATE .PY FILE WITH THE NAME OF MODEL (e,i. user.py admin.py)
+

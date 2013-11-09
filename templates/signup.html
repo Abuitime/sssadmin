@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Sign-Up Sheet</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+
+		<script src="../static/js/jquery.min.js"></script>
+		<script src="../static/js/jquery.poptrox.min.js"></script>
+		<script src="../static/js/skel.min.js"></script>
+		<script src="../static/js/init.js"></script>
+
+			<link rel="stylesheet" href="../static/css/skel-noscript.css" />
+			<link rel="stylesheet" href="../static/css/style.css" />
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+	</head>
+	<body >
+
+		
+		
+		<!-- Contact -->
+			<article class="container box style3">
+				<header>
+					<h2>SSS</h2>
+					<p>Administration</p>
+				</header>
+			</article>
+		
+			<article class="container box style3"
+				<section>
+					<header>
+						<h3>Form</h3>
+					</header>
+					<form method="post">
+						<div>{{_exists}}</div>
+						<div class="row">
+							<div class="6u">
+								<input class="text" type="text" name="name" id="name" value="" placeholder="First Name" />
+							</div>
+							<div class="6u">
+								<input class="text" type="text" name="last_name" id="last_name" value="" placeholder="Last Name" />
+							</div>
+							<span class="error_msg">{{error_name}}</span>
+						</div>
+						<div class="row">
+							<div class="6u">
+								<input class="text" type="text" name="email" id="email" value="" placeholder="email@ucsd.edu" />
+								<span class="error_msg">{{error_email}}</span>
+							</div>
+							<div class="6u">
+								<input class="text" type="text" name="pid" id="pid" value="{{pid}}" placeholder="PID" />
+								<span class="error_msg">{{error_pid}}</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="6u">
+								<input class="text" type="tel" name="number" id="number" value="" placeholder="Phone Number" />
+								<span class="error_msg">{{error_number}}</span>
+							</div>
+							<div class="6u">
+								<select name="year" id="year">
+									<option value="">Year</option>
+									<option value="1">1st</option>
+									<option value="2">2nd</option>
+									<option value="3">3rd</option>
+									<option value="4">4th</option>
+									<option value="5">5th</option>
+								</select>
+								<span class="error_msg">{{error_year}}</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<select name="major" id="major">
+									<option value="">Choose a major</option>
+									<option value="Bioengineering">Bioengineering</option>
+									<option value="Computer Science">Computer Science</option>
+									<option value="Computer Engineering">Computer Engineering</option>
+									<option value="Electrical Engineering">Electrical Engineering</option>
+									<option value="Mechanical Engineering">Mechanical Engineering</option>
+									<option value="Aerospace Engineering">Aerospace Engineering</option>
+									<option value="Nano Engineering">Nano Engineering</option>
+									<option value="Chemical Engineering">Chemical Engineering</option>
+									<option value="Structural Engineering">Structural Engineering</option>
+								</select>
+								<span class="error_msg">{{error_major}}</span>
+							</div>
+						</div>
+<<<<<<< HEAD
+=======
+						{% autoescape false %}
+						{{key}}
+						{% endautoescape %}
+
+>>>>>>> 1afe15d37703556d4f32b670d15310a0a1142aa0
+						<div class="row">
+							<div class="12u">
+								<ul class="actions">
+									<li>
+										<input type="submit" class="button form">Submit</input>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
+			</article>
+		</article>
+		
+
+	</body>
+</html>
