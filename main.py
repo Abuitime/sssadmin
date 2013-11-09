@@ -2,7 +2,7 @@ from controllers import *
 import webapp2
 
 
-app = webapp2.WSGIApplication([('/', home.HomeHandler),
+app = webapp2.WSGIApplication([('/', login.LoginHandler),
 								('/registration', registration.RegistrationHandler),
 								('/admin', admin.AdminHandler),
 								('/admin/events', events.EventsHandler),
