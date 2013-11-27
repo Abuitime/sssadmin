@@ -4,16 +4,15 @@ class Event(db.Model):
     name = db.StringProperty(required = True)
     date = db.StringProperty(required = True)
     location = db.StringProperty(required = True)
-    description = db.Text()
-    participants = db.Text()
+    description = db.TextProperty(required = True)
+    participants = db.TextProperty()
 
     @classmethod
-    def create(cls, name, date, location, description, participants):
-        return User(name = name,
+    def create(cls, name, date, location, description):
+        return Event(name = name,
                     date = date,
                     location = location,
-                    description = description,
-                    participants = participants)
+                    description = description)
 
     def by_date(cls, date):
         e = Event.all().filter('date =', date).get()

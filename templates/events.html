@@ -105,12 +105,12 @@
             <br>
 
 
-                      <form method="post">
+                      <form method="post" action="/admin/events">
 
                       <div class="control-group">                     
                       <label class="control-label" for="firstname">Event Name</label>
                       <div class="controls">
-                        <input type="text" class="span6" id="eventname" placeholder="General Body Meeting">
+                        <input type="text" class="span6" id="eventname" placeholder="General Body Meeting" name="ename">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
@@ -118,15 +118,21 @@
                     <div class="control-group">                     
                       <label class="control-label" for="location">Location</label>
                       <div class="controls">
-                        <input type="text" class="span6" id="location" placeholder="Henry Booker Room">
+                        <input type="text" class="span6" id="location" placeholder="Henry Booker Room" name="elocation">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
-                    
+                     <div class="control-group">                     
+                      <label class="control-label" for="date">Description</label>
+                      <div class="controls">
+                        <input type="text" class="span4" id="date" value="turnin up" name="edescription">
+                      </div> <!-- /controls -->       
+                    </div> <!-- /control-group -->
+
                     <div class="control-group">                     
                       <label class="control-label" for="date">Date</label>
                       <div class="controls">
-                        <input type="date" class="span4" id="date" value="2013-12-16;">
+                        <input type="date" class="span4" id="date" value="2013-12-16;" name="edate">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     <br />
@@ -162,9 +168,9 @@
                 </thead>
                 <tbody>
                   
-              
-              
-
+              {% autoescape false %}
+              {{events}}
+              {% endautoescape %}
               
                 </tbody>
               </table>
