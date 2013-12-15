@@ -2,7 +2,6 @@
 from google.appengine.api import users
 from controllers import base
 from models import event
-import uuid
 
 class EventsHandler(base.BaseHandler):
     def get(self):
@@ -10,10 +9,11 @@ class EventsHandler(base.BaseHandler):
         events = event.Event.all()
         e_list = ""
 
+        #list events
         for e in events:
             ebutton = """
-                <div class="btn-group"><button type="button" action="/admin/initevent?elaunch=%s" 
-                class="btn btn-default">Launch</button></div>
+                <div class="btn-group"><a href="/admin/initevent?elaunch=%s" 
+                class="btn btn-default">Launch</a></div>
             """ %e.eid
 
             e_list += """
@@ -28,12 +28,13 @@ class EventsHandler(base.BaseHandler):
         self.render("events.html", events = e_list, logged_user = user.nickname())
 
     def post(self):
+        #create and add event to datastore
         name = self.request.get('ename')
         date = self.request.get('edate')
         location = self.request.get('elocation')
         description = self.request.get('edescription')
         if(name and date and location and description):
-            e = event.Event.create(name, date, location, description, uuid.uuid1)
+            e = event.Event.create(name, date, location, description)
             e.put()
             self.redirect("/admin/events")
         else:
@@ -43,6 +44,7 @@ class EventsHandler(base.BaseHandler):
 
 class InitEventHandler(base.BaseHandler):
     def get(self):
+        #add event to session variable
         eid = self.request.get("elaunch")
         if not event.Event.by_eid(eid):
             self.redirect("/admin/events")

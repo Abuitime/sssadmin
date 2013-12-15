@@ -31,7 +31,7 @@ class RegistrationHandler(base.BaseHandler):
         if self.request.get('pid'):
             self.render("signup.html", pid = self.request.get('pid'))
         else:
-            self.redirect("/")
+            self.redirect("/admin/swipe?msg=nopid")
 
     def post(self):
         have_error = False
@@ -85,6 +85,6 @@ class RegistrationHandler(base.BaseHandler):
             u = user.User.register(self.pid, self.name, self.last_name, self.major, self.email, self.number, self.year)
             u.put()
 
-            user.User.login(self.pid)
+            user.User.login(self, self.pid)
             self.redirect('/?user=%s' %(u.name))
 

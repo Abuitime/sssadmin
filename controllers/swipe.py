@@ -1,7 +1,6 @@
 from controllers import base
 from models import user
-
-event = None
+from types import NoneType
 
 def valid_pid(pid):
     if len(pid) != 8:
@@ -13,19 +12,16 @@ class SwipeHandler(base.BaseHandler):
 		e = self.session.get('event')
 		if not e:
 			self.redirect("/admin")
-		event = e
 		if self.request.get('user'):
 			user = self.request.get('user')
 			msg = ("Welcome " + user + "!")
 			self.render("index.html", message = msg)
 		else:
-			#self.response.write("hello world")
 			self.render("index.html", message = "")
-			#self.response.write(base.template_dir)
 
 	def post(self):
 		e = self.session.get('event')
-		if not e or e != event:
+		if not e:
 			self.redirect("/admin")
 		pid = self.request.get('pid')
 		if(len(pid) == 10):
@@ -36,12 +32,8 @@ class SwipeHandler(base.BaseHandler):
 			self.render('index.html', message = msg)   
 		else:
 			#User.login should take care of checking in user to event so modify method in user.py to fit need
-			u = user.User.by_pid(pid)
+			u = user.User.login(self, pid)
 			if u:
-				if user.User.login(u):
-					msg = ("Welcome " + u.name + "!")
-				else:
-					msg = "Login error"
-				self.render('index.html', message = msg)
+				self.redirect('/admin/swipe?user=%s' %u.name)
 			else:
-				self.redirect('/registration?pid=%s' %(pid))
+				self.redirect('/registration?pid=%s' %pid)

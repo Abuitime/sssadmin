@@ -41,16 +41,16 @@
 						<div>{{_exists}}</div>
 						<div class="row">
 							<div class="6u">
-								<input class="text" type="text" name="name" id="name" value="" placeholder="First Name" />
+								<input class="text" type="text" name="name" id="name" value="{{name}}" placeholder="First Name" />
 							</div>
 							<div class="6u">
-								<input class="text" type="text" name="last_name" id="last_name" value="" placeholder="Last Name" />
+								<input class="text" type="text" name="last_name" id="last_name" value="{{last_name}}" placeholder="Last Name" />
 							</div>
 							<span class="error_msg">{{error_name}}</span>
 						</div>
 						<div class="row">
 							<div class="6u">
-								<input class="text" type="text" name="email" id="email" value="" placeholder="email@ucsd.edu" />
+								<input class="text" type="text" name="email" id="email" value="{{email}}" placeholder="email@ucsd.edu" />
 								<span class="error_msg">{{error_email}}</span>
 							</div>
 							<div class="6u">
@@ -60,7 +60,7 @@
 						</div>
 						<div class="row">
 							<div class="6u">
-								<input class="text" type="tel" name="number" id="number" value="" placeholder="Phone Number" />
+								<input class="text" type="tel" name="number" id="number" value="{{number}}" placeholder="Phone Number" />
 								<span class="error_msg">{{error_number}}</span>
 							</div>
 							<div class="6u">
@@ -92,13 +92,11 @@
 								<span class="error_msg">{{error_major}}</span>
 							</div>
 						</div>
-<<<<<<< HEAD
-=======
+
 						{% autoescape false %}
 						{{key}}
 						{% endautoescape %}
 
->>>>>>> 1afe15d37703556d4f32b670d15310a0a1142aa0
 						<div class="row">
 							<div class="12u">
 								<ul class="actions">
