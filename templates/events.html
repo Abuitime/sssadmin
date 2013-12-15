@@ -11,6 +11,7 @@
         rel="stylesheet">
 <link href="/lib/css/font-awesome.css" rel="stylesheet">
 <link href="/lib/css/style.css" rel="stylesheet">
+
 <link href="/lib/css/pages/dashboard.css" rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -59,22 +60,15 @@
 
 
 <div class="main">
-  
   <div class="main-inner">
-
       <div class="container">
-  
         <div class="row">
-          
           <div class="span12">          
-            
             <div class="widget ">
-              
               <div class="widget-header">
                 <i class="icon-calendar"></i>
                 <h3>Your Events</h3>
             </div> <!-- /widget-header -->
-          
           <div class="widget-content">
             
             
@@ -86,10 +80,13 @@
             </ul>
             <br />
 
+            <!-- CREATE BUTTONS -->
              <div class="container">
                 <div class="btn-toolbar" role="toolbar">
                 <div class="btn-group">
-                <p><a class="btn btn-primary btn-large" data-toggle="collapse" data-parent="#accordion" href="#event-form">Create Event &raquo;</a></p>
+                <p>
+                  <button class="btn btn-primary btn-large" data-toggle="modal" data-target="#create">Create Event &raquo;</button>
+                </p>
                 </div>
                 <div class="btn-group">
                     <button class="btn btn-large btn-facebook"><i class="icon-facebook"></i> | Connect with Facebook Event</button>
@@ -97,59 +94,54 @@
               </div>
             </div>
 
+      <!-- Modal -->
+      <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-target="model.html">
+       <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel">Event Form</h4>
+            </div>
+            <div class="modal-body">
 
+        <!-- FORM SUBMISSION STARTS HERE -->
+        <form method="post" action="/admin/events"> 
+
+          <div class="control-group">
+           <label class="control-label">Event Name</label> 
+           <input type="text" placeholder="eg. General Body Meeting" class="form-control input-lg" name="ename"> 
+          </div> 
+
+          <div class="control-group"> 
+            <label class="control-label">Location</label> 
+            <input type="place" placeholder="eg. Henry Booker Room" class="form-control input-lg" name="elocation"> 
+          </div> 
+
+          <div class="control-group"> 
+            <label class="control-label">Description</label>
+            <input type="paragraph" id="edescription" placeholder="Weekly Meetings" class="form-control input-lg" name="edescription"> 
+          </div> 
+
+          <div class="control-group"> 
+            <label class="control-label" for="date">Date</label>
+              <input type="date" class="form-control input-lg" id="date"  name="edate">
+            </label> 
+          </div>
+
+          <div class="line line-dashed"></div> 
+
+         <!-- form submission ends here -->
+               
+         </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit Event</button>
+            </form>
+          </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
             
-
-            <div id="event-form" class="panel-collapse collapse">
-            <div class="panel-body">
-            <br>
-
-
-                      <form method="post" action="/admin/events">
-
-                      <div class="control-group">                     
-                      <label class="control-label" for="firstname">Event Name</label>
-                      <div class="controls">
-                        <input type="text" class="span6" id="eventname" placeholder="General Body Meeting" name="ename">
-                      </div> <!-- /controls -->       
-                    </div> <!-- /control-group -->
-                    
-                    
-                    <div class="control-group">                     
-                      <label class="control-label" for="location">Location</label>
-                      <div class="controls">
-                        <input type="text" class="span6" id="location" placeholder="Henry Booker Room" name="elocation">
-                      </div> <!-- /controls -->       
-                    </div> <!-- /control-group -->
-                    
-                     <div class="control-group">                     
-                      <label class="control-label" for="date">Description</label>
-                      <div class="controls">
-                        <input type="text" class="span4" id="date" value="turnin up" name="edescription">
-                      </div> <!-- /controls -->       
-                    </div> <!-- /control-group -->
-
-                    <div class="control-group">                     
-                      <label class="control-label" for="date">Date</label>
-                      <div class="controls">
-                        <input type="date" class="span4" id="date" value="2013-12-16;" name="edate">
-                      </div> <!-- /controls -->       
-                    </div> <!-- /control-group -->
-                    <br />
-                     <div class="form-actions">
-                      <button type="submit" class="btn btn-primary">Save</button> 
-                      <button class="btn">Cancel</button>
-                    </div> <!-- /form-actions -->
-
-                  </form>
-
-                                           
-            <br /></div></div>
-                    
-                      
-                   
-
-
 
           <!-- Table -->
           <!-- /widget -->
