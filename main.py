@@ -11,6 +11,8 @@ app = webapp2.WSGIApplication([('/', login.LoginHandler),
 								('/admin', admin.AdminHandler),
 								('/admin/events', events.EventsHandler),
 								('/admin/initevent' , events.InitEventHandler),
+								('/admin/delevent', events.DeleteEventHandler),
+								('/admin/editevent', events.EditEventHandler),
 								('/admin/members', members.MembersHandler),
 								('/admin/dash', dash.DashHandler),
 								('/admin/swipe', swipe.SwipeHandler)

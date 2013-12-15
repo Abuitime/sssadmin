@@ -1,5 +1,6 @@
 from controllers import base
 from models import user
+from models import event
 from types import NoneType
 
 def valid_pid(pid):
@@ -10,8 +11,9 @@ def valid_pid(pid):
 class SwipeHandler(base.BaseHandler):
 	def get(self):
 		e = self.session.get('event')
-		if not e:
+		if not e or event.Event.by_eid(e):
 			self.redirect("/admin")
+
 		if self.request.get('user'):
 			user = self.request.get('user')
 			msg = ("Welcome " + user + "!")

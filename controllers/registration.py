@@ -86,5 +86,5 @@ class RegistrationHandler(base.BaseHandler):
             u.put()
 
             user.User.login(self, self.pid)
-            self.redirect('/?user=%s' %(u.name))
+            self.redirect('/admin/swipe?user=%s' %(u.name))
 

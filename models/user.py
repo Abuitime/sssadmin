@@ -38,7 +38,7 @@ class User(db.Model):
             for p in e.participants:
                 if p == pid:
                     return u
-            e.participants = e.participants.append(pid) 
+            e.participants.append(pid) 
             e.put();
             return u
         else:
