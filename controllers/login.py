@@ -12,7 +12,9 @@ class LoginHandler(base.BaseHandler):
 		user = users.get_current_user()
 
 		if user:
-			self.render("dash.html", title = "SSS Administration", logged_user = user.nickname(), logout_url = users.create_logout_url('/'))
+			self.render("dash.html", title = "SSS Administration",
+									 logged_user = user.nickname(),
+									 logout_url = users.create_logout_url('/'))
 		else:
 			self.redirect(users.create_login_url('/'))
 		

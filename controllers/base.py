@@ -23,27 +23,30 @@ def check_secure_val(secure_val):
         return val
         
 class BaseHandler(webapp2.RequestHandler):
-    def write(self, *a, **kw):
-        self.response.out.write(*a, **kw)
+        
+    # Name:
+    # Description:
+    # Arguments: 
+    # Return: 
+    def render(self, template, **params):
+        template = jinja_env.get_template(template)
+        resutl = template.render(params)
+        self.response.out.write(resutl)
 
-    def render_str(self, template, **params):
-        #params['user'] = self.user
-        t = jinja_env.get_template(template)
-        return t.render(params)
 
-    def render(self, template, **kw):
-        self.write(self.render_str(template, **kw))
 
+    # Might be removed
     def set_secure_cookie(self, name, val):
         cookie_val = make_secure_val(val)
         self.response.headers.add_header(
             'Set-Cookie',
             '%s=%s; Path=/' % (name, cookie_val))
 
+    
     def read_secure_cookie(self, name):
         cookie_val = self.request.cookies.get(name)
         return cookie_val and check_secure_val(cookie_val)
-        
+
     def dispatch(self):
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
