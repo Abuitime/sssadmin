@@ -1,5 +1,9 @@
 {% extends "base.html" %}
-
+ {% block active %}
+        <li class="active"><a href="/admin/dash"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+        <li ><a href="/admin/events"><i class="icon-calendar"></i><span>Events</span> </a> </li>
+        <li ><a href="/admin/members"><i class="icon-user"></i><span>Members</span> </a></li>
+        {% endblock active %}
 {% block content %}
- {{title}}
+
 {% endblock content %}
