@@ -4,6 +4,7 @@ import jinja2
 import urllib
 import hmac
 
+from webapp2_extras import sessions
 
 template_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -42,3 +43,18 @@ class BaseHandler(webapp2.RequestHandler):
     def read_secure_cookie(self, name):
         cookie_val = self.request.cookies.get(name)
         return cookie_val and check_secure_val(cookie_val)
+    def dispatch(self):
+        # Get a session store for this request.
+        self.session_store = sessions.get_store(request=self.request)
+
+        try:
+            # Dispatch the request.
+            webapp2.RequestHandler.dispatch(self)
+        finally:
+            # Save all sessions.
+            self.session_store.save_sessions(self.response)
+
+    @webapp2.cached_property
+    def session(self):
+        # Returns a session using the default cookie key.
+        return self.session_store.get_session()

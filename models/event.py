@@ -1,6 +1,7 @@
 from google.appengine.ext import db
 
 class Event(db.Model):
+    eid = db.StringProperty(required = True)
     name = db.StringProperty(required = True)
     date = db.StringProperty(required = True)
     location = db.StringProperty(required = True)
@@ -20,4 +21,8 @@ class Event(db.Model):
 
     def by_name(cls, name):
         e = Event.all().filter('name =', name).get()
+        return e
+
+    def by_eid(cls, eid):
+        e = Event.all().filter('eid =', eid).get()
         return e

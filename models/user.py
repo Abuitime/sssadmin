@@ -1,4 +1,5 @@
 from google.appengine.ext import db
+from models import event
 
 class User(db.Model):
     pid = db.StringProperty(required = True)
@@ -32,4 +33,8 @@ class User(db.Model):
     @classmethod
     def login(cls, pid):
         u = cls.by_pid(pid)
-        return u
+        e = event.Event.by_eid(self.session.get('event'))
+        if e:
+            e.participants = e.participants + ";" + u.pid 
+            return u
+        return None
