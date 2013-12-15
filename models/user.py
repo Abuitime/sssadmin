@@ -31,10 +31,15 @@ class User(db.Model):
                     year = year)
 
     @classmethod
-    def login(cls, pid):
+    def login(cls, self, pid):
         u = cls.by_pid(pid)
         e = event.Event.by_eid(self.session.get('event'))
-        if e:
-            e.participants = e.participants + ";" + u.pid 
+        if u and e:
+            for p in e.participants:
+                if p == pid:
+                    return u
+            e.participants = e.participants.append(pid) 
+            e.put();
             return u
-        return None
+        else:
+            return None
