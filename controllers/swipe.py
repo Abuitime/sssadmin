@@ -17,9 +17,9 @@ class SwipeHandler(base.BaseHandler):
 		if self.request.get('user'):
 			user = self.request.get('user')
 			msg = ("Welcome " + user + "!")
-			self.render("index.html", message = msg)
+			self.render("swipe.html", message = msg)
 		else:
-			self.render("index.html", message = "")
+			self.render("swipe.html", message = "")
 
 	def post(self):
 		e = self.session.get('event')
@@ -31,7 +31,7 @@ class SwipeHandler(base.BaseHandler):
 
 		if not valid_pid(pid):
 			msg = 'Invalid PID'
-			self.render('index.html', message = msg)   
+			self.render('swipe.html', message = msg)   
 		else:
 			#User.login should take care of checking in user to event so modify method in user.py to fit need
 			u = user.User.login(self, pid)
